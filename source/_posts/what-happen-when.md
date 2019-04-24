@@ -2,6 +2,7 @@
 title: what-happen-when
 date: 2019-03-18 20:18:13
 tags: 其他
+top: 
 ---
 > 从输入 URL 到页面加载完成的过程中都发生了什么事情？
 > 参考了https://github.com/skyline75489/what-happens-when-zh_CN 和 http://fex.baidu.com/blog/2014/05/what-happen/
