@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://ly929.github.io">
   <title>what-happen-when | 小晕借点盐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从输入 URL 到页面加载完成的过程中都发生了什么事情？参考了https://github.com/skyline75489/what-happens-when-zh_CN 和 http://fex.baidu.com/blog/2014/05/what-happen/  按下”g”键接下来的内容介绍了物理键盘和系统中断的工作原理，但是有一部分内容却没有涉及。当你按下“g”键，浏览器接收到这个消">
+  <meta name="description" content="从输入 URL 到页面加载完成的过程中都发生了什么事情？参考了https://github.com/skyline75489/what-happens-when-zh_CN 和 http://fex.baidu.com/blog/2014/05/what-happen/">
 <meta name="keywords" content="其他">
 <meta property="og:type" content="article">
 <meta property="og:title" content="what-happen-when">
 <meta property="og:url" content="https://ly929.github.io/2019/03/18/what-happen-when/index.html">
 <meta property="og:site_name" content="小晕借点盐">
-<meta property="og:description" content="从输入 URL 到页面加载完成的过程中都发生了什么事情？参考了https://github.com/skyline75489/what-happens-when-zh_CN 和 http://fex.baidu.com/blog/2014/05/what-happen/  按下”g”键接下来的内容介绍了物理键盘和系统中断的工作原理，但是有一部分内容却没有涉及。当你按下“g”键，浏览器接收到这个消">
+<meta property="og:description" content="从输入 URL 到页面加载完成的过程中都发生了什么事情？参考了https://github.com/skyline75489/what-happens-when-zh_CN 和 http://fex.baidu.com/blog/2014/05/what-happen/">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-12T11:33:31.207Z">
+<meta property="og:updated_time" content="2021-10-31T05:51:50.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="what-happen-when">
-<meta name="twitter:description" content="从输入 URL 到页面加载完成的过程中都发生了什么事情？参考了https://github.com/skyline75489/what-happens-when-zh_CN 和 http://fex.baidu.com/blog/2014/05/what-happen/  按下”g”键接下来的内容介绍了物理键盘和系统中断的工作原理，但是有一部分内容却没有涉及。当你按下“g”键，浏览器接收到这个消">
+<meta name="twitter:description" content="从输入 URL 到页面加载完成的过程中都发生了什么事情？参考了https://github.com/skyline75489/what-happens-when-zh_CN 和 http://fex.baidu.com/blog/2014/05/what-happen/">
   
     <link rel="alternative" href="/atom.xml" title="小晕借点盐" type="application/atom+xml">
   
@@ -168,9 +168,9 @@
         <blockquote>
 <p>从输入 URL 到页面加载完成的过程中都发生了什么事情？<br>参考了<a href="https://github.com/skyline75489/what-happens-when-zh_CN" target="_blank" rel="noopener">https://github.com/skyline75489/what-happens-when-zh_CN</a> 和 <a href="http://fex.baidu.com/blog/2014/05/what-happen/" target="_blank" rel="noopener">http://fex.baidu.com/blog/2014/05/what-happen/</a></p>
 </blockquote>
+ <a id="more"></a>
 <h1 id="按下”g”键"><a href="#按下”g”键" class="headerlink" title="按下”g”键"></a>按下”g”键</h1><p>接下来的内容介绍了物理键盘和系统中断的工作原理，但是有一部分内容却没有涉及。<br>当你按下“g”键，浏览器接收到这个消息之后，会触发自动完成机制。浏览器根据自己的算法，以及你是否处于隐私浏览模式，会在浏览器的地址框下方给出输入建议。大部分算法会优先考虑根据你的搜索历史和书签等内容给出建议。<br>你打算输入 “google.com”，因此给出的建议并不匹配。但是输入过程中仍然有大量的代码在后台运行，你的每一次按键都会使得给出的建议更加准确。甚至有可能在你输入之前，浏览器就将 “google.com” 建议给你。</p>
 <h2 id="回车键按下"><a href="#回车键按下" class="headerlink" title="回车键按下"></a>回车键按下</h2><p>为了从零开始，我们选择键盘上的回车键被按到最低处作为起点。在这个时刻，一个专用于回车键的电流回路被直接地或者通过电容器间接地闭合了，使得少量的电流进入了键盘的逻辑电路系统。这个系统会扫描每个键的状态，对于按键开关的电位弹跳变化进行噪音消除(debounce)，并将其转化为键盘码值。在这里，回车的码值是13。键盘控制器在得到码值之后，将其编码，用于之后的传输。现在这个传输过程几乎都是通过通用串行总线(USB)或者蓝牙(Bluetooth)来进行的，以前是通过PS/2或者ADB连接进行。</p>
- <a id="more"></a>
 <h2 id="USB键盘："><a href="#USB键盘：" class="headerlink" title="USB键盘："></a>USB键盘：</h2><p>键盘的USB元件通过计算机上的USB接口与USB控制器相连接，USB接口中的第一号针为它提供了5V的电压<br>键码值存储在键盘内部电路一个叫做”endpoint”的寄存器内<br>USB控制器大概每隔10ms便查询一次”endpoint”以得到存储的键码值数据，这个最短时间间隔由键盘提供<br>键值码值通过USB串行接口引擎被转换成一个或者多个遵循低层USB协议的USB数据包<br>这些数据包通过D+针或者D-针(中间的两个针)，以最高1.5Mb/s的速度从键盘传输至计算机。速度限制是因为人机交互设备总是被声明成”低速设备”（USB 2.0 compliance）<br>这个串行信号在计算机的USB控制器处被解码，然后被人机交互设备通用键盘驱动进行进一步解释。之后按键的码值被传输到操作系统的硬件抽象层</p>
 <h2 id="虚拟键盘（触屏设备）："><a href="#虚拟键盘（触屏设备）：" class="headerlink" title="虚拟键盘（触屏设备）："></a>虚拟键盘（触屏设备）：</h2><p>在现代电容屏上，当用户把手指放在屏幕上时，一小部分电流从传导层的静电域经过手指传导，形成了一个回路，使得屏幕上触控的那一点电压下降，屏幕控制器产生一个中断，报告这次“点击”的坐标<br>然后移动操作系统通知当前活跃的应用，有一个点击事件发生在它的某个GUI部件上了，现在这个部件是虚拟键盘的按钮<br>虚拟键盘引发一个软中断，返回给OS一个“按键按下”消息<br>这个消息又返回来向当前活跃的应用通知一个“按键按下”事件</p>
 <h2 id="产生中断-非USB键盘"><a href="#产生中断-非USB键盘" class="headerlink" title="产生中断[非USB键盘]"></a>产生中断[非USB键盘]</h2><p>键盘在它的中断请求线(IRQ)上发送信号，信号会被中断控制器映射到一个中断向量，实际上就是一个整型数 。CPU使用中断描述符表(IDT)把中断向量映射到对应函数，这些函数被称为中断处理器，它们由操作系统内核提供。当一个中断到达时，CPU根据IDT和中断向量索引到对应的中断处理器，然后操作系统内核出场了。</p>
@@ -548,15 +548,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Shadowsocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+                <a href="javascript:void(0)" class="js-tag color4">GFW</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">test</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
